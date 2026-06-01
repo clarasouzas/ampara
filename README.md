@@ -1,4 +1,3 @@
-<img src="" width="300" height="400">
 
 ## Sobre
 
@@ -55,4 +54,4 @@ http://127.0.0.1:8000/
 
 Faça login com o superusuário criado anteriormente.
 
-Agora o **Gabarita** está pronto para ser utilizado!
+Agora o **Ampara** está pronto para ser utilizado!
