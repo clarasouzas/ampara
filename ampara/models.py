@@ -8,6 +8,7 @@ class Impacto(models.Model):
 class Depoimento(models.Model):
     nome = models.CharField(max_length=50)
     usuario = models.CharField(max_length=50)
-    descricao = models.CharField(max_length=150)
+    descricao = models.CharField(max_length=10000)
+    anonimo = models.BooleanField(default=True) 
 
 

@@ -318,7 +318,7 @@
 
                     <div class="projeto-imagem">
                         <img
-                            {% comment %} src="{% static 'img/meninas-de-luta.png' %}" {% endcomment %}
+                            src="{% static 'ampara/img/logo_ml.jpg' %}"
                             alt="Meninas de Luta"
                         >
                     </div>
@@ -396,5 +396,167 @@
 
 </section>
 
+<section class="impacto-section py-5">
+
+    <div class="container">
+
+        <div class="impacto-header">
+            <span class="impacto-label">IMPACTO</span>
+
+            <h2>A rede em movimento</h2>
+
+            <p>
+                Cada número representa uma história de coragem e cuidado.
+            </p>
+        </div>
+
+        <div class="impacto-cards">
+
+            <div class="impacto-card">
+
+                <span class="impacto-numero">
+                    {{ impacto.mulheres_conectadas }}
+                </span>
+
+                <span class="impacto-texto">
+                    MULHERES CONECTADAS
+                </span>
+
+            </div>
+
+            <div class="impacto-card">
+
+                <span class="impacto-numero">
+                    {{ impacto.publicacoes_compartilhadas }}
+                </span>
+
+                <span class="impacto-texto">
+                    PUBLICAÇÕES<br>
+                    COMPARTILHADAS
+                </span>
+
+            </div>
+
+            <div class="impacto-card">
+
+                <span class="impacto-numero">
+                    {{ impacto.conteudos_informativos }}
+                </span>
+
+                <span class="impacto-texto">
+                    CONTEÚDOS<br>
+                    INFORMATIVOS
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos py-5">
+
+    <div class="container">
+
+        <!-- Cabeçalho -->
+        <div class="depoimentos-header mb-5">
+
+            <span class="depoimentos-label">
+                DEPOIMENTOS
+            </span>
+
+            <h2>
+                Vozes da nossa comunidade
+            </h2>
+
+            <p>
+                Histórias compartilhadas com permissão pelas participantes.
+            </p>
+
+        </div>
+
+
+        <!-- Depoimentos -->
+        <div class="row g-4">
+
+            {% for depoimento in depoimentos %}
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="depoimento-card">
+
+                        <!-- Usuário -->
+                        <div class="depoimento-usuario">
+
+                            <div class="depoimento-avatar">
+
+                                {% if depoimento.anonimo %}
+                                    <i class="bi bi-person"></i>
+                                {% else %}
+                                    {{ depoimento.nome|first|upper }}
+                                {% endif %}
+
+                            </div>
+
+
+                            <div>
+
+                                {% if depoimento.anonimo %}
+
+                                    <h3>
+                                        Participante Anônima
+                                    </h3>
+
+                                    <span>
+                                        anônima
+                                    </span>
+
+                                {% else %}
+
+                                    <h3>
+                                        {{ depoimento.nome }}
+                                    </h3>
+
+                                    <span>
+                                        @{{ depoimento.usuario }}
+                                    </span>
+
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Depoimento -->
+                        <p class="depoimento-texto">
+                            {{ depoimento.descricao }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            {% empty %}
+
+                <div class="col-12">
+
+                    <p class="text-center">
+                        Ainda não há depoimentos publicados.
+                    </p>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
 {% endblock %}
 
